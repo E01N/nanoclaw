@@ -36,3 +36,9 @@ groups/global/*
 .nanoclaw/
 
 agents-sdk-docs
+
+# Google OAuth credentials
+credentials/
+token.json
+*.pem
+*.key
