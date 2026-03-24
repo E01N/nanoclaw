@@ -100,7 +100,7 @@ export function getServiceManager(): ServiceManager {
 
 export function getNodePath(): string {
   try {
-    return execSync('command -v node', { encoding: 'utf-8' }).trim();
+    return execSync('command -v node', { encoding: 'utf-8', shell: 'bash' }).trim();
   } catch {
     return process.execPath;
   }
@@ -108,7 +108,7 @@ export function getNodePath(): string {
 
 export function commandExists(name: string): boolean {
   try {
-    execSync(`command -v ${name}`, { stdio: 'ignore' });
+    execSync(`command -v ${name}`, { stdio: 'ignore', shell: 'bash' });
     return true;
   } catch {
     return false;
